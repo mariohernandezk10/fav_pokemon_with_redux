@@ -8,17 +8,18 @@ class Posts extends Component {
     componentDidMount() {
         this.props.fetchPosts();
     }
-
+    
     render() {
-        // const postItems = this.props.posts.map(post => (
-        //     <div key={post.id}>
-        //         <h3>{post.title}</h3>
-        //         <p>{post.body}</p>
-        //     </div>
-        // ));
+        const postItems = this.props.posts.map(post => (
+            <div key={post.id} name={post.name} url={post.url} >
+                <h3>{post.name}</h3>
+                <p>More info: {post.url}</p>
+            </div>
+        ));
         return (
             <div>
                 <h1>Which is your favorite?</h1>
+                {postItems}
             </div>
         )
     }
