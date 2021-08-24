@@ -10,16 +10,16 @@ class Posts extends Component {
     }
     
     render() {
-        const postPokemons = this.props.posts.map(post => (
-            <div name={post.name} url={post.url} >
-                <h3>{post.name}</h3>
-                <p>More info: {post.url}</p>
+        const postAllPokemons = this.props.arrayOfPokemons.map(pokemon => (
+            <div name={pokemon.name} url={pokemon.url} >
+                <h3>{pokemon.name}</h3>
+                <p>More info: {pokemon.url}</p>
             </div>
         ));
         return (
             <div>
                 <h1>Which is your favorite?</h1>
-                {postPokemons}
+                {postAllPokemons}
             </div>
         )
     }
@@ -27,11 +27,11 @@ class Posts extends Component {
 
 Posts.propTypes = {
     fetchAllPokemons: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired
+    arrayOfPokemons: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
-    posts: state.posts.items
+    arrayOfPokemons: state.arrayOfPokemons.items
 })
 
 
