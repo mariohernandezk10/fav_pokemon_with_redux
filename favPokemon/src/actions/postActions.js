@@ -1,9 +1,9 @@
 import { FETCH_POSTS } from './types';
 
-export const fetchPosts = () => dispatch => {
+export const fetchAllPokemons = () => dispatch => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=251')
         .then(res => res.json())
-        .then(posts => posts.results)
+        .then(main => main.results)
         .then(posts => 
             dispatch({
             type: FETCH_POSTS,

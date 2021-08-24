@@ -15,7 +15,6 @@ export default function postReducer(state = initialState, action) {
             return {
                 ...state,
                 items: action.payload
-                // "action.payload" is the array of 100 objects = all posts
             };
             default:
             return state;

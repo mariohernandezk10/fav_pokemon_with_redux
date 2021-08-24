@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {fetchPosts} from '../actions/postActions';
+import {fetchAllPokemons} from '../actions/postActions';
 
 class Posts extends Component {
 
     componentDidMount() {
-        this.props.fetchPosts();
+        this.props.fetchAllPokemons();
     }
     
     render() {
-        const postItems = this.props.posts.map(post => (
+        const postPokemons = this.props.posts.map(post => (
             <div name={post.name} url={post.url} >
                 <h3>{post.name}</h3>
                 <p>More info: {post.url}</p>
@@ -19,14 +19,14 @@ class Posts extends Component {
         return (
             <div>
                 <h1>Which is your favorite?</h1>
-                {postItems}
+                {postPokemons}
             </div>
         )
     }
 }
 
 Posts.propTypes = {
-    fetchPosts: PropTypes.func.isRequired,
+    fetchAllPokemons: PropTypes.func.isRequired,
     posts: PropTypes.array.isRequired
 }
 
@@ -35,4 +35,4 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(mapStateToProps, {fetchPosts})(Posts);
+export default connect(mapStateToProps, {fetchAllPokemons})(Posts);
