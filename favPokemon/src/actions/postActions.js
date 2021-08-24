@@ -4,10 +4,10 @@ export const fetchAllPokemons = () => dispatch => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=251')
         .then(res => res.json())
         .then(main => main.results)
-        .then(posts => 
+        .then(arrayOfPokemons => 
             dispatch({
             type: FETCH_POSTS,
-            payload: posts
+            payload: arrayOfPokemons
             })
         )
 }
