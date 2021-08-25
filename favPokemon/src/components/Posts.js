@@ -13,7 +13,12 @@ class Posts extends Component {
         const postAllPokemons = this.props.arrayOfPokemons.map(pokemon => (
             <div name={pokemon.name} url={pokemon.url} >
                 <h3>{pokemon.name}</h3>
-                <p>More info: {pokemon.url}</p>
+                <button onClick={() => {
+                    const pokeUrl = pokemon.url;
+                    console.log(pokeUrl);
+                    
+                }}>Click Here</button>
+                <p>For More Info</p>
             </div>
         ));
         return (
